@@ -30,8 +30,15 @@ grant all privileges on springguru.* to 'spring_guru_owner'@'%' identified by "G
 
 #Bash env
 export SPRING_DATASOURCE_URL=jdbc:mysql://52.14.228.153:3306/springguru
+
+#Either plain username and password (not recommended)
 export SPRING_DATASOURCE_USERNAME=spring_guru_owner
 export SPRING_DATASOURCE_PASSWORD="GuruPassword"
+
+#Or an encrypted version (recommended)
+export SPRING_DATASOURCE_USERNAME="ENC(Ez2Lw/Hkr4/66k1FtJ5JI9waF7bcyQDRDF2/HBWhiOc=)"
+export SPRING_DATASOURCE_PASSWORD="ENC(7Uv8O0FzyOLJJK/isP9q2pU952nMnYYx)"
+export JASYPT_ENCRYPTOR_PASSWORD=password
 
 #run command
 java -jar ./spring-core-devops-0.0.1.jar --spring.jpa.hibernate.ddl-auto=update
