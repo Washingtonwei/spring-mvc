@@ -3,6 +3,7 @@ package mwsu.springframework.bootstrap;
 import mwsu.springframework.domain.*;
 import mwsu.springframework.domain.security.Role;
 import mwsu.springframework.services.*;
+import org.apache.commons.collections4.IteratorUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationListener;
 import org.springframework.context.event.ContextRefreshedEvent;
@@ -48,13 +49,15 @@ public class SpringJPABootstrap implements ApplicationListener<ContextRefreshedE
 
     @Override
     public void onApplicationEvent(ContextRefreshedEvent contextRefreshedEvent) {
-        loadProducts();
-        loadUsersAndCustomers();
-        loadCarts();
-        loadOrderHistory();
-        loadRoles();
-        assignUsersToDefaultRole();
-        assignAdminToUser();
+        if(userService.listAll().size() == 0) {
+            loadProducts();
+            loadUsersAndCustomers();
+            loadCarts();
+            loadOrderHistory();
+            loadRoles();
+            assignUsersToDefaultRole();
+            assignAdminToUser();
+        }
     }
 
     private void loadCarts() {

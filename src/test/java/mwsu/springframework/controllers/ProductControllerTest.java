@@ -3,6 +3,7 @@ package mwsu.springframework.controllers;
 import mwsu.springframework.domain.Product;
 import mwsu.springframework.services.ProductService;
 import org.junit.Before;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.mockito.InjectMocks;
 import org.mockito.Matchers;
@@ -27,6 +28,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 /**
  * Created by bingyang.wei on 5/7/2017.
  */
+@Ignore
 public class ProductControllerTest {
     @Mock
     private ProductService productService;

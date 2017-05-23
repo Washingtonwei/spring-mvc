@@ -2,6 +2,7 @@ package mwsu.springframework.services;
 
 import mwsu.springframework.domain.Product;
 import mwsu.springframework.config.JpaIntegrationConfig;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,6 +17,7 @@ import java.util.List;
  */
 @RunWith(SpringJUnit4ClassRunner.class)
 @SpringBootTest(classes = JpaIntegrationConfig.class)
+@Ignore
 public class ProductServiceJapDaoImplTest {
 
     private ProductService productService;
